@@ -1,5 +1,3 @@
-Printing-Code-2014
-==================
 import processing.pdf.*;
 boolean savePDF = false;
  float y;
