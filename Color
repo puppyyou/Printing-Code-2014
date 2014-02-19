@@ -1,0 +1,240 @@
+import processing.pdf.*;
+boolean savePDF = false;
+
+int x1=0;
+int y1=200/2;
+
+int x2=100/2;
+int y2=100/2;
+
+int x3=300/2;
+int y3=0;
+
+int x4=400/2;
+int y4=0;
+
+int x5=400/2;
+int y5=200/2;
+
+int x6=350/2;
+int y6=200/2;
+
+int x7=500/2;
+int y7=300/2;
+
+int x8=300/2;
+int y8=300/2;
+
+int x9=300/2;
+int y9=500/2;
+
+int x10=200/2;
+int y10=500/2;
+
+int x11=100/2;
+int y11=400/2;
+
+int x12=100/2;
+int y12=350/2;
+
+int x13=200/2;
+int y13=200/2;
+
+int colorR = 40;
+int colorG = 80;
+int colorB = 300;
+
+void setup() {
+  size(1200, 800);
+  colorMode(HSB, 360, 100, 100);
+  background(10, 10, 184);
+  noStroke();
+  smooth();
+}
+
+void draw() {
+if ( savePDF ) {
+    beginRecord( PDF, "color.pdf" );
+  translate(-width/14, 0);
+  int rectSize = round(width * 0.1);
+
+  //fill(30, 0, 100); //yellow
+  //rect(width*0.25- ((2*rectSize)/3), height/3, 300, 300);
+
+  //  fill(250, 0, 100); //purple
+  //  rect(width*0.5- (rectSize/2), height/3, 300, 300);
+
+  fill(60, 80, 100);//red
+   rect(width*0.75- (rectSize/3), height/3, 300, 300);
+
+  square1();
+  square2();
+  square3();
+  
+  if ( savePDF ) {
+  endRecord();
+  savePDF = false;
+ }
+}
+}
+
+void square1() {
+
+  translate(250, 300 );
+
+  fill(201, 15, 130);//1
+  beginShape();
+  vertex(x1, y1);
+  vertex(x2, y2);
+  vertex(x3, y3);
+  vertex(x13, y13);
+  endShape();
+
+  fill(196, 29, 140);//2
+  beginShape();
+  vertex(x3, y3);
+  vertex(x4, y4);
+  vertex(x8, y8);
+  vertex(x13, y13);
+  endShape();
+
+  fill(49, 38, 134); //3
+  beginShape();
+  vertex(x4, y4);
+  vertex(x7, y7);
+  vertex(x8, y8);
+  endShape();
+
+  fill(1, 46, 124); //5
+  beginShape();
+  vertex(x7, y7);
+  vertex(x8, y8);
+  vertex(x9, y9);
+  endShape();
+
+  fill(314, 36, 67); //6
+  beginShape();
+  vertex(x8, y8);
+  vertex(x9, y9);
+  vertex(x10, y10);
+  vertex(x11, y11);
+  endShape();
+
+  fill(64, 72, 87); //7
+  beginShape();
+  vertex(x13, y13);
+  vertex(x8, y8);
+  vertex(x11, y11);
+  vertex(x12, y12);
+  endShape();
+
+  fill(115, 22, 121);//8
+  beginShape();
+  vertex(x1, y1);
+  vertex(x12, y12);
+  vertex(x13, y13);
+  endShape();
+}
+
+void square2() {
+
+
+  fill(200, 20, 87);
+  beginShape();
+  vertex(300, -30);
+  vertex(350, 50);
+  vertex(350, 200);
+  vertex(300, 260);
+  endShape();
+
+  fill(4, 72, 287, 40);
+  beginShape();
+  vertex(580, -30);
+  vertex(540, 50);
+  vertex(540, 200);
+  vertex(580, 260);
+  endShape();
+
+  fill(185, 21, 91);
+  beginShape();
+  vertex(300, -30);
+  vertex(350, 50);
+  vertex(540, 50);
+  vertex(580, -30);
+  endShape();
+
+  fill(351, 69, 89);
+  beginShape();
+  vertex(350, 200);
+  vertex(300, 260);
+  vertex(580, 260);
+  vertex(540, 200);
+  endShape();
+
+  //
+  fill(214, colorR, 26);
+  beginShape();
+  vertex(350, 125);
+  vertex(540, 125);
+  vertex(540, 200);
+  vertex(350, 200);
+  endShape();
+  //
+}
+
+void square3() {
+  translate(width/2+40, -10);
+
+  fill(colorG*4, colorB*0.5, 170);
+  beginShape();
+
+  vertex(x2, y2);
+  vertex(x3, y3);
+  vertex(x13, y13);
+  endShape();
+
+  fill(colorR, 20, 170);
+  beginShape();
+  vertex(x13, y13);
+  vertex(x7, y7);
+  vertex(x9, y9);
+  endShape();
+
+  fill(colorB*2, 70, 70);
+  beginShape(); 
+  vertex(x13, y13);
+  vertex(x9, y9);
+  vertex(x12, y12);
+  endShape();
+
+
+  fill( 260,colorR, 130);
+  beginShape(); 
+  vertex(x3, y3);
+  vertex(x7, y7);
+  vertex(x13, y13);
+  endShape();
+
+  fill(10, colorG/2, 270);
+  beginShape(); 
+  vertex(x13, y13);
+  vertex(x2, y2);
+  vertex(x12, y12);
+  endShape();
+}
+
+void keyPressed()
+{
+  if ( key == 's' ) {
+  savePDF = true;
+ } 
+}
+
+
+void mousePressed() {
+
+colorR = int(random(30));
+colorG = int(random(300));
+colorB = int(random(60));
+}
+
