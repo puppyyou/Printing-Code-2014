@@ -61,10 +61,10 @@ void setup()
   popMatrix();
 
 
-//  colorMode(HSB, 360, 100, 100);
-//  fill(60, 70, 80);
-//  translate((width-pic_w)/2, (height-((width-pic_w)/2)-pic_h));
-//  rect(0, 0, pic_w, pic_h);
+  colorMode(HSB, 360, 100, 100);
+  fill(60, 70, 80);
+  translate((width-pic_w)/2, (height-((width-pic_w)/2)-pic_h));
+  rect(0, 0, pic_w, pic_h);
 
   endRecord();
 }
